@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portofolio — Ajeng Nursyifa (Okediil Service)</title>
+    <!-- Tailwind CDN for quick prototype -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js for charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <meta
+      name="description"
+      content="Portofolio & Materi Kapita Selekta (RASP) — Ajeng Nursyifa. SWOT, Porter, SWEBOK, rencana KP & rekomendasi."
+    />
+
+    <style>
+      /* minor helpers */
+      :root {
+        --glass: rgba(255, 255, 255, 0.6);
+        --glass-dark: rgba(17, 24, 39, 0.5);
+      }
+      .glass {
+        background: var(--glass);
+        backdrop-filter: blur(6px);
+      }
+      .dark .glass {
+        background: var(--glass-dark);
+      }
+      .focus-outline:focus {
+        outline: 3px solid rgba(34, 197, 94, 0.18);
+        outline-offset: 3px;
+      }
+      /* keep images responsive inside cards */
+      .cover-img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 0.5rem;
+      }
+    </style>
+  </head>
+
+  <body
+    class="antialiased bg-gradient-to-br from-emerald-50 to-slate-50 dark:from-slate-900 dark:to-slate-800 text-slate-800 dark:text-slate-100"
+  >
+    <div class="min-h-screen flex flex-col">
+      <!-- NAV -->
+      <header
+        class="sticky top-0 z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md border-b"
+      >
+        <div
+          class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between"
+        >
+          <a href="#hero" class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold"
+            >
+              AJ
+            </div>
+            <div>
+              <div class="text-lg font-semibold">Ajeng Nursyifa</div>
+              <div class="text-xs text-slate-600 dark:text-slate-300">
+                Portofolio — Kapita Selekta (RASP)
+              </div>
+            </div>
+          </a>
+
+          <nav class="hidden md:flex items-center gap-4 text-sm">
+            <a href="#materi" class="hover:text-emerald-600">Materi</a>
+            <a href="#swot" class="hover:text-emerald-600">SWOT</a>
+            <a href="#porter" class="hover:text-emerald-600">Porter</a>
+            <a href="#swebok" class="hover:text-emerald-600">SWEBOK</a>
+            <a href="#rencana" class="hover:text-emerald-600">Rencana KP</a>
+            <a href="#about" class="hover:text-emerald-600">Tentang</a>
+            <button
+              id="toggleDark"
+              class="ml-3 px-3 py-1 rounded-md border hover:bg-slate-100 dark:hover:bg-slate-700"
+            >
+              🌙
+            </button>
+          </nav>
+
+          <div class="md:hidden">
+            <button id="menuBtn" class="px-3 py-1 border rounded">☰</button>
+          </div>
+        </div>
+        <div
+          id="mobileMenu"
+          class="hidden md:hidden bg-white/90 dark:bg-slate-900/90"
+        >
+          <div class="px-4 py-3 flex flex-col gap-2">
+            <a href="#materi">Materi</a>
+            <a href="#swot">SWOT</a>
+            <a href="#porter">Porter</a>
+            <a href="#swebok">SWEBOK</a>
+            <a href="#rencana">Rencana KP</a>
+            <a href="#about">Tentang</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- HERO -->
+      <section id="hero" class="relative overflow-hidden">
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-400"
+        ></div>
+        <div
+          class="relative max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-10 items-center text-white"
+        >
+          <div>
+            <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
+              Okediil Service<br />Portofolio & Analisis
+            </h1>
+            <p class="mt-4 text-lg text-emerald-100">
+              Kumpulan materi Kapita Selekta (RASP) — ringkasan tugas, analisis
+              SWOT, Porter’s Five Forces, SWEBOK, rencana KP/skripsi &
+              rekomendasi strategi digital untuk UKM.
+            </p>
+
+            <div class="mt-6 flex gap-3">
+              <a
+                href="#materi"
+                class="px-5 py-3 bg-white text-emerald-600 font-semibold rounded-lg shadow hover:bg-slate-100"
+                >Lihat Materi</a
+              >
+              <a
+                href="#about"
+                class="px-5 py-3 border border-white text-white font-semibold rounded-lg hover:bg-emerald-700"
+                >Tentang Saya</a
+              >
+            </div>
+
+            <div class="mt-6 grid grid-cols-3 gap-6 text-sm">
+              <div>
+                <div class="text-3xl font-bold">2020</div>
+                <div class="text-emerald-100">Tahun Berdiri</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold">10+</div>
+                <div class="text-emerald-100">Proyek Digital</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold">5</div>
+                <div class="text-emerald-100">Analisis Strategis</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div
+              class="relative bg-white dark:bg-slate-900 rounded-2xl shadow-lg p-6 text-slate-800 dark:text-slate-200"
+            >
+              <h3 class="text-lg font-semibold mb-2">Ringkasan Singkat</h3>
+              <p class="text-sm">
+                Okediil Service — jasa servis HP & laptop (Bandar Lampung).
+                Awalnya administrasi manual; solusi: sistem informasi berbasis
+                web (React.js + Tailwind + Laravel). Analisis SWOT & Porter
+                memberikan rekomendasi untuk digitalisasi, branding, dan
+                pengembangan SDM.
+              </p>
+
+              <div class="mt-4 flex gap-3">
+                <button
+                  id="copySummary"
+                  class="px-4 py-2 bg-emerald-600 text-white rounded-md hover:bg-emerald-700"
+                >
+                  Salin Ringkasan
+                </button>
+                <button id="openModal" class="px-4 py-2 border rounded-md">
+                  Buka Dokumen
+                </button>
+                <a id="downloadPDF" href="#" class="px-4 py-2 border rounded-md"
+                  >Download PDF</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MAIN CONTENT -->
+      <main class="flex-1">
+        <!-- Materi: Tabs -->
+        <section id="materi" class="max-w-6xl mx-auto px-6 py-12">
+          <div class="flex items-center justify-between mb-6">
+            <h2 class="text-2xl font-bold">Isi Materi</h2>
+            <div class="text-sm text-slate-600 dark:text-slate-300">
+              Semua ringkasan & dokumen tugas dimasukkan lengkap
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-slate-900 rounded-2xl shadow p-4">
+            <div class="flex flex-wrap gap-3 mb-4">
+              <button
+                class="tabBtn px-4 py-2 rounded-md bg-emerald-600 text-white"
+                data-tab="overview"
+              >
+                Overview
+              </button>
+              <button
+                class="tabBtn px-4 py-2 rounded-md border"
+                data-tab="swot"
+              >
+                SWOT
+              </button>
+              <button
+                class="tabBtn px-4 py-2 rounded-md border"
+                data-tab="porter"
+              >
+                Porter
+              </button>
+              <button
+                class="tabBtn px-4 py-2 rounded-md border"
+                data-tab="swebok"
+              >
+                SWEBOK
+              </button>
+              <button
+                class="tabBtn px-4 py-2 rounded-md border"
+                data-tab="rencana"
+              >
+                Rencana KP
+              </button>
+              <button
+                class="tabBtn px-4 py-2 rounded-md border"
+                data-tab="opensrc"
+              >
+                Open Source Philosophy
+              </button>
+            </div>
+
+            <div id="tabContent" class="mt-2">
+              <div id="overview" class="tabPanel">
+                <h3 class="font-semibold">Latar Belakang & Tujuan</h3>
+                <p class="mt-2 text-sm text-slate-700 dark:text-slate-200">
+                  Okediil Service didirikan 2020 di Bandar Lampung. Proses
+                  administrasi manual berisiko kehilangan data dan inefisiensi.
+                  Tujuan proyek: merancang website front-end multi-role (admin,
+                  teknisi, superadmin) untuk manajemen transaksi, monitoring
+                  layanan, dan dokumentasi servis.
+                </p>
+                <div class="mt-4 grid md:grid-cols-3 gap-4">
+                  <div
+                    class="p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg"
+                  >
+                    <h4 class="font-semibold">Solusi</h4>
+                    <p class="text-sm mt-2">
+                      React.js + Tailwind untuk Frontend; Laravel/Node untuk
+                      Backend; integrasi payment gateway dan notifikasi.
+                    </p>
+                  </div>
+                  <div class="p-4 bg-white dark:bg-slate-800 rounded-lg shadow">
+                    <h4 class="font-semibold">Fitur Utama</h4>
+                    <ul
+                      class="mt-2 text-sm list-disc ml-5 text-slate-700 dark:text-slate-200"
+                    >
+                      <li>Multi-role login</li>
+                      <li>Manajemen transaksi & status pekerjaan</li>
+                      <li>Notifikasi & histori servis</li>
+                    </ul>
+                  </div>
+                  <div class="p-4 bg-white dark:bg-slate-800 rounded-lg shadow">
+                    <h4 class="font-semibold">Deliverables</h4>
+                    <ul
+                      class="mt-2 text-sm list-disc ml-5 text-slate-700 dark:text-slate-200"
+                    >
+                      <li>HTML/CSS prototype</li>
+                      <li>React front-end</li>
+                      <li>Documentasi & slide</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div id="swot" class="hidden tabPanel">
+                <h3 class="font-semibold">Analisis SWOT</h3>
+                <div class="grid md:grid-cols-2 gap-4 mt-3">
+                  <div
+                    class="p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg"
+                  >
+                    <h4 class="font-semibold text-emerald-600">Strengths</h4>
+                    <ol
+                      class="list-decimal ml-5 mt-2 text-sm text-slate-700 dark:text-slate-200"
+                    >
+                      <li>Teknisi berpengalaman.</li>
+                      <li>
+                        Sistem informasi digital (efisiensi & transparansi).
+                      </li>
+                      <li>Multi-role & monitoring servis online.</li>
+                      <li>Layanan antar-jemput & garansi.</li>
+                    </ol>
+                  </div>
+
+                  <div class="p-4 bg-rose-50 dark:bg-rose-900/20 rounded-lg">
+                    <h4 class="font-semibold text-rose-600">Weaknesses</h4>
+                    <ol
+                      class="list-decimal ml-5 mt-2 text-sm text-slate-700 dark:text-slate-200"
+                    >
+                      <li>SDM terbatas.</li>
+                      <li>Belum integrasi pembayaran online.</li>
+                      <li>Promosi digital terbatas.</li>
+                    </ol>
+                  </div>
+
+                  <div class="p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg">
+                    <h4 class="font-semibold text-amber-600">Opportunities</h4>
+                    <ol
+                      class="list-decimal ml-5 mt-2 text-sm text-slate-700 dark:text-slate-200"
+                    >
+                      <li>Tren digitalisasi UMKM.</li>
+                      <li>Permintaan servis meningkat.</li>
+                      <li>Potensi integrasi e-commerce & marketplace.</li>
+                    </ol>
+                  </div>
+
+                  <div class="p-4 bg-slate-100 dark:bg-slate-800/40 rounded-lg">
+                    <h4
+                      class="font-semibold text-slate-700 dark:text-slate-200"
+                    >
+                      Threats
+                    </h4>
+                    <ol
+                      class="list-decimal ml-5 mt-2 text-sm text-slate-700 dark:text-slate-200"
+                    >
+                      <li>Persaingan ketat.</li>
+                      <li>Substitusi: pembelian perangkat baru.</li>
+                      <li>Risiko keamanan data digital.</li>
+                    </ol>
+                  </div>
+                </div>
+
+                <div
+                  class="mt-4 p-4 bg-white dark:bg-slate-900 rounded-lg shadow"
+                >
+                  <h5 class="font-semibold">Rekomendasi</h5>
+                  <ul
+                    class="list-disc ml-5 mt-2 text-sm text-slate-700 dark:text-slate-200"
+                  >
+                    <li>Integrasi payment gateway & notifikasi.</li>
+                    <li>Backup berkala & security basics.</li>
+                    <li>Promosi digital: SEO & social media.</li>
+                    <li>Pelatihan SDM & SOP.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div id="porter" class="hidden tabPanel">
+                <h3 class="font-semibold">Porter’s Five Forces</h3>
+                <ul
+                  class="mt-3 list-decimal ml-5 text-sm text-slate-700 dark:text-slate-200"
+                >
+                  <li>
+                    <strong>Ancaman Pendatang Baru:</strong> Tinggi — low entry
+                    barrier; pembeda: kualitas & reputasi.
+                  </li>
+                  <li>
+                    <strong>Ancaman Substitusi:</strong> Cukup tinggi —
+                    pembelian device baru.
+                  </li>
+                  <li>
+                    <strong>Supplier Power:</strong> Sedang — komponen umum
+                    mudah, khusus sulit.
+                  </li>
+                  <li>
+                    <strong>Buyer Power:</strong> Tinggi — pelanggan bandingkan
+                    harga & layanan.
+                  </li>
+                  <li>
+                    <strong>Industry Rivalry:</strong> Tinggi — banyak
+                    competitor lokal.
+                  </li>
+                </ul>
+
+                <div
+                  class="mt-4 p-4 bg-white dark:bg-slate-900 rounded-lg shadow"
+                >
+                  <h5 class="font-semibold">Strategi Saran</h5>
+                  <p class="text-sm text-slate-700 dark:text-slate-200">
+                    Fokus diferensiasi (layanan cepat, garansi, transparansi),
+                    integrasi pembayaran & promosi digital untuk perkuat market
+                    position.
+                  </p>
+                </div>
+              </div>
+
+              <div id="swebok" class="hidden tabPanel">
+                <h3 class="font-semibold">Area SWEBOK yang Digunakan</h3>
+                <ol
+                  class="mt-2 list-decimal ml-5 text-sm text-slate-700 dark:text-slate-200"
+                >
+                  <li>Software Requirements</li>
+                  <li>Software Design</li>
+                  <li>Software Construction</li>
+                  <li>Software Testing</li>
+                  <li>Software Engineering Management</li>
+                </ol>
+              </div>
+
+              <div id="rencana" class="hidden tabPanel">
+                <h3 class="font-semibold">Rencana KP & Skripsi</h3>
+                <ul
+                  class="mt-2 list-disc ml-5 text-sm text-slate-700 dark:text-slate-200"
+                >
+                  <li>
+                    <strong>KP:</strong> Front-End Multi-Role Berbasis Website
+                    pada Sistem Okediil Service (React.js + Tailwind).
+                  </li>
+                  <li>
+                    <strong>Skripsi:</strong> Dashboard untuk Mendukung
+                    Keputusan Kelulusan Tepat Waktu Menggunakan Metode Design
+                    Thinking.
+                  </li>
+                </ul>
+
+                <div
+                  class="mt-4 p-4 bg-white dark:bg-slate-900 rounded-lg shadow"
+                >
+                  <h5 class="font-semibold">
+                    Kesiapan & Rencana Tindak Lanjut
+                  </h5>
+                  <p class="text-sm text-slate-700 dark:text-slate-200">
+                    Selesaikan dokumentasi, buat repository GitHub, siapkan
+                    slide presentasi, dan lakukan user testing pada prototipe.
+                  </p>
+                </div>
+              </div>
+
+              <div id="opensrc" class="hidden tabPanel">
+                <h3 class="font-semibold">Open Source Philosophy (ringkas)</h3>
+                <p class="mt-2 text-sm text-slate-700 dark:text-slate-200">
+                  Menggunakan lisensi open source mempermudah kolaborasi, audit
+                  keamanan, dan adopsi komunitas. Disarankan: dokumentasi
+                  terbuka, kontribusi guideline, dan lisensi permissive untuk
+                  modul non-kritis.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Charts -->
+        <section
+          id="charts"
+          class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-2 gap-6"
+        >
+          <div class="p-6 bg-white dark:bg-slate-900 rounded-2xl shadow">
+            <h3 class="font-semibold mb-2">Visualisasi SWOT</h3>
+            <canvas id="swotChart" height="220"></canvas>
+          </div>
+          <div class="p-6 bg-white dark:bg-slate-900 rounded-2xl shadow">
+            <h3 class="font-semibold mb-2">Porter — Level Risiko</h3>
+            <canvas id="porterChart" height="220"></canvas>
+          </div>
+        </section>
+
+        <!-- Recommendations -->
+        <section id="recommend" class="max-w-6xl mx-auto px-6 py-10">
+          <div
+            class="bg-white dark:bg-slate-900 rounded-2xl shadow p-6 grid md:grid-cols-3 gap-4"
+          >
+            <div>
+              <h4 class="font-semibold">Digitalisasi</h4>
+              <p class="text-sm mt-2 text-slate-700 dark:text-slate-200">
+                Payment gateway, notifikasi, CRM, backup & security basics.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold">Branding</h4>
+              <p class="text-sm mt-2 text-slate-700 dark:text-slate-200">
+                SEO, social ads, marketplace listing, promosi lokal.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold">SDM</h4>
+              <p class="text-sm mt-2 text-slate-700 dark:text-slate-200">
+                Pelatihan teknisi, SOP, rekrutmen bertahap saat trafik naik.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-6 flex gap-3">
+            <button id="exportMD" class="px-4 py-2 border rounded">
+              Export Ringkasan (Markdown)
+            </button>
+            <button
+              id="printPage"
+              class="px-4 py-2 bg-emerald-600 text-white rounded"
+            >
+              Cetak / Print
+            </button>
+          </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="max-w-6xl mx-auto px-6 py-10">
+          <div
+            class="bg-white dark:bg-slate-900 rounded-2xl shadow p-6 grid md:grid-cols-2 gap-6"
+          >
+            <div>
+              <h3 class="font-semibold">Tentang Penulis</h3>
+              <p class="mt-2 text-sm text-slate-700 dark:text-slate-200">
+                Ajeng Nursyifa — NPM: 2215061031 — PSTI C. Dokumen tugas Kapita
+                Selekta dirangkum di halaman ini sebagai portofolio dan bukti
+                pengumpulan tugas.
+              </p>
+            </div>
+            <div>
+              <h3 class="font-semibold">Kontak & Catatan</h3>
+              <p class="mt-2 text-sm text-slate-700 dark:text-slate-200">
+                Email: <strong>ajeng@example.com</strong> (ganti dengan email
+                asli). Deploy ke GitHub Pages / Vercel untuk dapatkan URL
+                pengumpulan tugas.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer
+        class="py-6 text-center text-sm text-slate-500 dark:text-slate-400"
+      >
+        &copy; 2025 Ajeng Nursyifa — Materi Kapita Selekta.
+      </footer>
+    </div>
+
+    <!-- Modal for original PDFs -->
+    <div
+      id="modal"
+      class="fixed inset-0 hidden items-center justify-center bg-black/50 z-50"
+    >
+      <div class="w-11/12 md:w-3/4 bg-white dark:bg-slate-900 rounded-xl p-6">
+        <div class="flex justify-between items-center">
+          <h4 class="font-semibold">Dokumen Tugas (PDF)</h4>
+          <button id="closeModal" class="px-3 py-1 border rounded">
+            Tutup
+          </button>
+        </div>
+        <div class="mt-4 text-sm text-slate-700 dark:text-slate-200">
+          Dokumen asli telah diunggah; ringkasan dan bagian penting sudah
+          dimasukkan di laman ini.
+        </div>
+        <div class="mt-4 space-y-2">
+          <a id="linkPdf1" class="underline">Lihat PDF Pert1 (SWOT)</a><br />
+          <a id="linkPdf2" class="underline">Lihat PDF Pert2</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Mobile menu
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      menuBtn?.addEventListener("click", () =>
+        mobileMenu.classList.toggle("hidden")
+      );
+
+      // Dark mode
+      const toggleDark = document.getElementById("toggleDark");
+      toggleDark?.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+        toggleDark.textContent = document.documentElement.classList.contains(
+          "dark"
+        )
+          ? "☀️"
+          : "🌙";
+      });
+
+      // Tabs
+      document.querySelectorAll(".tabBtn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".tabBtn").forEach((b) => {
+            b.classList.remove("bg-emerald-600", "text-white");
+            b.classList.add("border");
+          });
+          btn.classList.add("bg-emerald-600", "text-white");
+          const tab = btn.dataset.tab;
+          document
+            .querySelectorAll(".tabPanel")
+            .forEach((p) => p.classList.add("hidden"));
+          document.getElementById(tab).classList.remove("hidden");
+          window.scrollTo({
+            top:
+              document.getElementById(tab).getBoundingClientRect().top +
+              window.scrollY -
+              120,
+            behavior: "smooth",
+          });
+        });
+      });
+      // init default tab
+      document.querySelectorAll(".tabBtn")[0].click();
+
+      // Modal for PDFs
+      const modal = document.getElementById("modal");
+      document
+        .getElementById("openModal")
+        .addEventListener("click", () => modal.classList.remove("hidden"));
+      document
+        .getElementById("closeModal")
+        .addEventListener("click", () => modal.classList.add("hidden"));
+
+      // Charts
+      new Chart(document.getElementById("swotChart"), {
+        type: "doughnut",
+        data: {
+          labels: ["Strengths", "Weaknesses", "Opportunities", "Threats"],
+          datasets: [
+            {
+              data: [5, 4, 4, 4],
+              backgroundColor: ["#10b981", "#ef4444", "#f59e0b", "#64748b"],
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { position: "bottom" } },
+        },
+      });
+
+      new Chart(document.getElementById("porterChart"), {
+        type: "bar",
+        data: {
+          labels: ["Entrants", "Substitutes", "Suppliers", "Buyers", "Rivalry"],
+          datasets: [
+            {
+              data: [8, 7, 5, 8, 9],
+              backgroundColor: [
+                "#34d399",
+                "#f87171",
+                "#facc15",
+                "#60a5fa",
+                "#9ca3af",
+              ],
+            },
+          ],
+        },
+        options: {
+          scales: { y: { beginAtZero: true, max: 10 } },
+          plugins: { legend: { display: false } },
+        },
+      });
+
+      // Copy summary
+      document.getElementById("copySummary").addEventListener("click", () => {
+        const text =
+          "Okediil Service (2020) — solusi digital: React.js + Tailwind. Rekomendasi: integrasi payment gateway, promosi digital, pelatihan SDM.";
+        navigator.clipboard
+          .writeText(text)
+          .then(() => alert("Ringkasan berhasil disalin!"));
+      });
+
+      // Export markdown (basic)
+      document.getElementById("exportMD").addEventListener("click", () => {
+        const md = `# Ringkasan Okediil Service\n\n- Latar: Administrasi manual -> digitalisasi\n- SWOT: Strengths: teknisi berpengalaman; Weaknesses: SDM terbatas; Opportunities: digitalisasi UMKM; Threats: persaingan\n- Rekomendasi: integrasi payment gateway, promosi digital, pelatihan SDM\n`;
+        const blob = new Blob([md], { type: "text/markdown" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "ringkasan_okediil.md";
+        a.click();
+      });
+
+      // Print
+      document
+        .getElementById("printPage")
+        .addEventListener("click", () => window.print());
+
+      // PDF links (point to uploaded files in workspace)
+      document.getElementById("linkPdf1").href =
+        "sandbox:/mnt/data/AjengNursyifa_2215061031_Pert1_SWOT.pdf";
+      document.getElementById("linkPdf2").href =
+        "sandbox:/mnt/data/AjengNursyifa_2215061031_per2.pdf";
+      document.getElementById("downloadPDF").addEventListener("click", (e) => {
+        e.preventDefault();
+        window.location.href =
+          "sandbox:/mnt/data/AjengNursyifa_2215061031_Pert1_SWOT.pdf";
+      });
+
+      // Smooth scroll for nav links
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", function (e) {
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+    </script>
+    ```
+  </body>
+</html>
