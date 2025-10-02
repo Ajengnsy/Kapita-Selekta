@@ -103,57 +103,77 @@
 
       <!-- HERO -->
       <section id="hero" class="relative overflow-hidden">
+        <!-- Background -->
         <div
           class="absolute inset-0 bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-400"
         ></div>
         <div
-          class="relative max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-10 items-center text-white"
+          class="absolute inset-0 opacity-20 bg-[url('https://www.toptal.com/designers/subtlepatterns/patterns/memphis-colorful.png')]"
+        ></div>
+
+        <!-- Content -->
+        <div
+          class="relative max-w-7xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center text-white"
         >
-          <div>
-            <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
+          <!-- Left -->
+          <div class="space-y-6 animate-fadeInUp">
+            <h1
+              class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight"
+            >
               Okediil Service<br />Portofolio & Analisis
             </h1>
-            <p class="mt-4 text-lg text-emerald-100">
+            <p class="text-base sm:text-lg text-emerald-100">
               Kumpulan materi Kapita Selekta (RASP) — ringkasan tugas, analisis
               SWOT, Porter’s Five Forces, SWEBOK, rencana KP/skripsi &
               rekomendasi strategi digital untuk UKM.
             </p>
 
-            <div class="mt-6 flex gap-3">
+            <!-- Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4">
               <a
                 href="#materi"
-                class="px-5 py-3 bg-white text-emerald-600 font-semibold rounded-lg shadow hover:bg-slate-100"
+                class="px-6 py-3 bg-white text-emerald-600 font-semibold rounded-lg shadow-md hover:bg-slate-100 transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white"
                 >Lihat Materi</a
               >
               <a
                 href="#about"
-                class="px-5 py-3 border border-white text-white font-semibold rounded-lg hover:bg-emerald-700"
+                class="px-6 py-3 border border-white text-white font-semibold rounded-lg hover:bg-emerald-700 transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white"
                 >Tentang Saya</a
               >
             </div>
 
-            <div class="mt-6 grid grid-cols-3 gap-6 text-sm">
+            <!-- Stats -->
+            <div
+              class="grid grid-cols-3 gap-4 sm:gap-6 text-center sm:text-left"
+            >
               <div>
-                <div class="text-3xl font-bold">2020</div>
-                <div class="text-emerald-100">Tahun Berdiri</div>
+                <div class="text-2xl sm:text-3xl font-bold">2020</div>
+                <div class="text-emerald-100 text-sm sm:text-base">
+                  Tahun Berdiri
+                </div>
               </div>
               <div>
-                <div class="text-3xl font-bold">10+</div>
-                <div class="text-emerald-100">Proyek Digital</div>
+                <div class="text-2xl sm:text-3xl font-bold">10+</div>
+                <div class="text-emerald-100 text-sm sm:text-base">
+                  Proyek Digital
+                </div>
               </div>
               <div>
-                <div class="text-3xl font-bold">5</div>
-                <div class="text-emerald-100">Analisis Strategis</div>
+                <div class="text-2xl sm:text-3xl font-bold">5</div>
+                <div class="text-emerald-100 text-sm sm:text-base">
+                  Analisis Strategis
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="relative">
+          <!-- Right -->
+          <div class="relative animate-fadeIn">
             <div
-              class="relative bg-white dark:bg-slate-900 rounded-2xl shadow-lg p-6 text-slate-800 dark:text-slate-200"
+              class="relative bg-white dark:bg-slate-900 rounded-2xl shadow-xl p-6 text-slate-800 dark:text-slate-200 transform transition hover:scale-[1.02]"
             >
               <h3 class="text-lg font-semibold mb-2">Ringkasan Singkat</h3>
-              <p class="text-sm">
+              <p class="text-sm leading-relaxed">
                 Okediil Service — jasa servis HP & laptop (Bandar Lampung).
                 Awalnya administrasi manual; solusi: sistem informasi berbasis
                 web (React.js + Tailwind + Laravel). Analisis SWOT & Porter
@@ -161,17 +181,24 @@
                 pengembangan SDM.
               </p>
 
-              <div class="mt-4 flex gap-3">
+              <!-- Buttons -->
+              <div class="mt-4 flex flex-col sm:flex-row gap-3">
                 <button
                   id="copySummary"
-                  class="px-4 py-2 bg-emerald-600 text-white rounded-md hover:bg-emerald-700"
+                  class="px-5 py-2 bg-emerald-600 text-white rounded-md shadow hover:bg-emerald-700 transition"
                 >
                   Salin Ringkasan
                 </button>
-                <button id="openModal" class="px-4 py-2 border rounded-md">
+                <button
+                  id="openModal"
+                  class="px-5 py-2 border rounded-md shadow-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition"
+                >
                   Buka Dokumen
                 </button>
-                <a id="downloadPDF" href="#" class="px-4 py-2 border rounded-md"
+                <a
+                  id="downloadPDF"
+                  href="#"
+                  class="px-5 py-2 border rounded-md shadow-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition text-center"
                   >Download PDF</a
                 >
               </div>
@@ -180,17 +207,39 @@
         </div>
       </section>
 
+      <!-- Tambahkan Tailwind animasi custom -->
+      <style>
+        @keyframes fadeInUp {
+          0% {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fadeInUp {
+          animation: fadeInUp 1s ease-out;
+        }
+        .animate-fadeIn {
+          animation: fadeInUp 1.2s ease-out;
+        }
+      </style>
+
       <!-- MAIN CONTENT -->
       <main class="flex-1">
         <!-- Materi: Tabs -->
         <section id="materi" class="max-w-6xl mx-auto px-6 py-12">
-          <div class="flex items-center justify-between mb-6">
+          <!-- Header -->
+          <div
+            class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-6"
+          >
             <h2 class="text-2xl font-bold">Isi Materi</h2>
             <div class="text-sm text-slate-600 dark:text-slate-300">
               Semua ringkasan & dokumen tugas dimasukkan lengkap
             </div>
           </div>
-
           <div class="bg-white dark:bg-slate-900 rounded-2xl shadow p-4">
             <div class="flex flex-wrap gap-3 mb-4">
               <button
